@@ -1,6 +1,9 @@
 # IKUUU 自动签到脚本
 
 [![CI](https://github.com/JKay15/Ikuuu-Auto-Daily-check-in/actions/workflows/tests.yml/badge.svg)](https://github.com/JKay15/Ikuuu-Auto-Daily-check-in/actions/workflows/tests.yml)
+[![Stars](https://img.shields.io/github/stars/JKay15/Ikuuu-Auto-Daily-check-in?style=social)](https://github.com/JKay15/Ikuuu-Auto-Daily-check-in/stargazers)
+[![Forks](https://img.shields.io/github/forks/JKay15/Ikuuu-Auto-Daily-check-in?style=social)](https://github.com/JKay15/Ikuuu-Auto-Daily-check-in/network/members)
+[![Issues](https://img.shields.io/github/issues/JKay15/Ikuuu-Auto-Daily-check-in)](https://github.com/JKay15/Ikuuu-Auto-Daily-check-in/issues)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)
 
