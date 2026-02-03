@@ -97,7 +97,7 @@ IKUUU_CAPSOLVER_API_KEY=your_capsolver_key
 IKUUU_GMAIL_APP_PASSWORD=your_gmail_app_password
 PATH=/usr/local/bin:/usr/bin:/bin
 
-0 9 * * * /Library/Frameworks/Python.framework/Versions/3.8/bin/python3 /Users/xiongjiangkai/Desktop/精选/ikuuu/ikuuuCheckIn.py >> /Users/xiongjiangkai/Desktop/精选/ikuuu/ikuuuCheckIn.log 2>&1
+0 9 * * * /path/to/python3.8 /path/to/ikuuu/ikuuuCheckIn.py >> /path/to/ikuuu/ikuuuCheckIn.log 2>&1
 ```
 
 3. 保存并退出即可生效
