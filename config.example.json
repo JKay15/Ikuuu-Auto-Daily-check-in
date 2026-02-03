@@ -1,0 +1,84 @@
+{
+  "accounts": [
+    {
+      "name": "main",
+      "email": "your_email@example.com",
+      "passwd": "your_ikuuu_password"
+    }
+  ],
+  "debug": {
+    "dump_dir": "debug_html",
+    "dump_html": false,
+    "force_domains": []
+  },
+  "domain_ordering": {
+    "mode": "success_rate"
+  },
+  "domains": {
+    "https://example.ikuuu.tld": {
+      "fail_count": 0,
+      "last_checked": "YYYY-MM-DD",
+      "last_failure": "YYYY-MM-DD",
+      "last_success": "YYYY-MM-DD",
+      "success_count": 0
+    }
+  },
+  "last_success_date": "YYYY-MM-DD",
+  "last_success_domain": "https://example.ikuuu.tld",
+  "login": {
+    "captcha_result": {},
+    "captcha_solver": {
+      "api_key_set_date": "YYYY-MM-DD",
+      "enabled": false,
+      "fallback_provider": "anticaptcha",
+      "last_rotation_notice": "YYYY-MM-DD",
+      "poll_interval_seconds": 3,
+      "provider": "capsolver",
+      "rotate_days": 90,
+      "rotation_notify_email": true,
+      "rotation_pending": false,
+      "rotation_warn_before_days": 7,
+      "rotation_warn_interval_days": 1,
+      "timeout_seconds": 120
+    },
+    "ignore_captcha": false,
+    "remember_me": "off",
+    "two_fa_code": ""
+  },
+  "mail": {
+    "body": "hi",
+    "confirm_before_send": true,
+    "confirmed": false,
+    "enabled": true,
+    "from_addr": "your_gmail@example.com",
+    "imap_folder": "INBOX",
+    "imap_host": "imap.gmail.com",
+    "imap_user": "your_gmail@example.com",
+    "last_mail_attempt": "YYYY-MM-DD",
+    "last_mail_sent": "YYYY-MM-DD",
+    "last_rotation_notice": "YYYY-MM-DD",
+    "password_set_date": "YYYY-MM-DD",
+    "pending_send": false,
+    "poll_interval": 5,
+    "poll_seconds": 30,
+    "rotate_days": 90,
+    "rotation_notify_email": true,
+    "rotation_notify_to": "notify_to@example.com",
+    "rotation_pending": false,
+    "rotation_warn_before_days": 7,
+    "rotation_warn_interval_days": 1,
+    "smtp_host": "smtp.gmail.com",
+    "smtp_port": 587,
+    "smtp_user": "your_gmail@example.com",
+    "subject": "获取最新地址",
+    "to_addr": "find@ikuuu.pro"
+  },
+  "seed_domains": [
+    "https://ikuuu.nl",
+    "https://ikuuu.fyi",
+    "https://ikuuu.de",
+    "https://ikuuu.one",
+    "https://ikuuu.pro"
+  ],
+  "verbose": false
+}

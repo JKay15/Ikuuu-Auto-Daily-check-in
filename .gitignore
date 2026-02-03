@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs
+*.log
+ikuuuCheckIn.log_*
+
+# Local config / secrets
+config.json
+.env
+.env.*
+
+# Debug dumps
+debug_html/
+
+# OS
+.DS_Store
