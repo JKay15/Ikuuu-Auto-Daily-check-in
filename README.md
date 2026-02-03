@@ -125,6 +125,66 @@ PATH=/usr/local/bin:/usr/bin:/bin
 Cron 默认不会加载你的终端环境变量，所以建议在 crontab 里显式配置。  
 日志可能包含敏感信息，建议把日志放在本地安全目录，且不要上传到仓库。
 
+**launchd 定时运行（macOS 官方推荐）**
+1. 新建 `plist`（请按实际路径修改）
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.jkay.ikuuu.checkin</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/path/to/python3.8</string>
+    <string>/path/to/ikuuu/ikuuuCheckIn.py</string>
+  </array>
+
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key><integer>9</integer>
+    <key>Minute</key><integer>0</integer>
+  </dict>
+
+  <key>StandardOutPath</key>
+  <string>/path/to/ikuuu/ikuuuCheckIn.log</string>
+  <key>StandardErrorPath</key>
+  <string>/path/to/ikuuu/ikuuuCheckIn.err.log</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>IKUUU_EMAIL</key><string>your_email@example.com</string>
+    <key>IKUUU_PASS</key><string>your_ikuuu_password</string>
+    <key>IKUUU_CAPSOLVER_API_KEY</key><string>your_capsolver_key</string>
+    <key>IKUUU_GMAIL_APP_PASSWORD</key><string>your_gmail_app_password</string>
+    <key>PATH</key><string>/usr/local/bin:/usr/bin:/bin</string>
+  </dict>
+</dict>
+</plist>
+```
+
+2. 保存为 `~/Library/LaunchAgents/com.jkay.ikuuu.checkin.plist`
+
+3. 加载并启动
+
+```bash
+launchctl load ~/Library/LaunchAgents/com.jkay.ikuuu.checkin.plist
+launchctl start com.jkay.ikuuu.checkin
+```
+
+4. 卸载/停止
+
+```bash
+launchctl stop com.jkay.ikuuu.checkin
+launchctl unload ~/Library/LaunchAgents/com.jkay.ikuuu.checkin.plist
+```
+
+**launchd 说明**  
+`launchd` 是 macOS 官方推荐的定时/守护方案，长期运行更稳定。  
+如要开机自启，只需保持 `plist` 在 `~/Library/LaunchAgents/` 目录即可。
+
 **验证码解码（CapSolver / AntiCaptcha）**
 - 在 `config.json` 中开启 `login.captcha_solver.enabled=true`
 - 设置 `login.captcha_solver.provider` 为 `capsolver` 或 `anticaptcha`
