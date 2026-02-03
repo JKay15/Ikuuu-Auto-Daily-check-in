@@ -1,5 +1,9 @@
 # IKUUU 自动签到脚本
 
+[![CI](https://github.com/JKay15/Ikuuu-Auto-Daily-check-in/actions/workflows/tests.yml/badge.svg)](https://github.com/JKay15/Ikuuu-Auto-Daily-check-in/actions/workflows/tests.yml)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)
+
 **一句话说明**
 自动登录 IKUUU 并签到，自动发现新域名、根据历史成功率智能排序，支持邮件探测与提醒，支持 CapSolver 解码 GeeTest 验证码，适合配合 crontab 定时运行。
 
@@ -9,6 +13,18 @@
 - 自动化邮件：可发送探测邮件获取最新地址，支持提醒与轮换提示
 - 验证码解码：内置 GeeTest v4 解析逻辑，支持 CapSolver 与 AntiCaptcha
 - 低维护运行：输出健康检查摘要，适合 cron 定时
+
+**演示输出（节选）**
+```text
+2026-02-03 09:00:00
+共需要签到1个账号
+=====正在执行第1个账号(main)=====
+尝试域名: https://ikuuu.nl
+登录成功，开始签到: https://ikuuu.nl
+已签到: 您似乎已经签到过了...
+=====第1个账号，执行完毕=====
+健康检查 (1/1): result=success
+```
 
 **运行环境**
 - Python 3.8+
@@ -139,6 +155,13 @@ Cron 默认不会加载你的终端环境变量，所以建议在 crontab 里显
 - `recent_success`
 - `success_count`
 - `recent_checked`
+
+**CI 与质量保障**
+- GitHub Actions 在 Python 3.8 下运行单元测试
+- 运行方式：`python -m unittest discover -s tests`
+
+**贡献**
+欢迎 PR 与建议，详见 `CONTRIBUTING.md`。
 
 **隐私与安全**
 - 日志可能包含账号与密码信息，仓库已忽略所有 `.log` 文件。
